@@ -44,9 +44,7 @@ namespace WebApplication2.Controllers
         public HttpResponseMessage Post(Contact contact)
         {
             this.contactRepository.SaveContact(contact);
-            
             var response = Request.CreateResponse<Contact>(System.Net.HttpStatusCode.Created, contact);
-            response=Request.CreateResponse<Contact>(System.Net.HttpStatusCode.BadRequest, contact);
             return response;
         }
 
